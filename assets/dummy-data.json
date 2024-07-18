@@ -1,0 +1,23 @@
+[
+	{
+		"name": "cmp-test-template",
+		"provisionedSpace": 58271968789,
+		"guestOs": "Ubuntu Linux (64-bit)",
+		"compatability": "vmx-20",
+		"memorySize": 4294967296
+	},
+	{
+		"name": "ProLinux",
+		"provisionedSpace": 12345678901,
+		"guestOs": "Other 4.x Linux (64-bit)",
+		"compatability": "vmx-20",
+		"memorySize": 1073741824
+	},
+	{
+		"name": "Ubuntu",
+		"provisionedSpace": 23456789012,
+		"guestOs": "Ubuntu Linux (64-bit)",
+		"compatability": "vmx-20",
+		"memorySize": 2147483648
+	}
+]

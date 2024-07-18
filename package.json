@@ -1,0 +1,17 @@
+{
+	"name": "exceljs-sandbox",
+	"version": "1.0.0",
+	"type": "module",
+	"author": "Attacktive",
+	"scripts": {
+		"prerun": "tsc",
+		"run": "node build/index.js"
+	},
+	"dependencies": {
+		"exceljs": "^4.4.0"
+	},
+	"devDependencies": {
+		"@types/exceljs": "^1.3.0",
+		"typescript": "^5.5.3"
+	}
+}

@@ -4,7 +4,7 @@
 	"type": "module",
 	"author": "Attacktive",
 	"scripts": {
-		"prerun": "tsc",
+		"prerun": "tsc --build --clean; tsc",
 		"run": "node build/index.js",
 		"lint": "eslint ."
 	},

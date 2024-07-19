@@ -11,7 +11,7 @@ export interface FormattedVirtualMachine extends VirtualMachine {
 	memorySizeInGb: string;
 }
 
-export const isVirtualMachineArray = (input: any): input is VirtualMachine[] => {
+export const isVirtualMachineArray = (input: unknown): input is VirtualMachine[] => {
 	if (!Array.isArray(input)) {
 		console.warn("The input is not an array.");
 		return false;

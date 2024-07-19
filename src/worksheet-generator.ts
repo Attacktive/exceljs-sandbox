@@ -1,5 +1,7 @@
 import { Workbook } from "exceljs";
 import virtualMachines from "../assets/dummy-data.json" with { type: "json" };
+import { format } from "./formatter.js";
+import { isVirtualMachineArray } from "./types/virtual-machine.js";
 
 export const generateWorksheetIn = (workbook: Workbook) => {
 	const worksheet = workbook.addWorksheet("Virtual Machines");
@@ -11,7 +13,7 @@ export const generateWorksheetIn = (workbook: Workbook) => {
 		},
 		{
 			header: "Provisioned space",
-			key: "provisionedSpace"
+			key: "provisionedSpaceInGb"
 		},
 		{
 			header: "Guest OS",
@@ -23,9 +25,15 @@ export const generateWorksheetIn = (workbook: Workbook) => {
 		},
 		{
 			header: "Memory size",
-			key: "memorySize"
+			key: "memorySizeInGb"
 		}
 	];
 
-	worksheet.addRows(virtualMachines);
+	if (!isVirtualMachineArray(virtualMachines)) {
+		throw new Error(`The source data is not an array of VirtualMachine: ${JSON.stringify(virtualMachines)} (typeof it: ${typeof virtualMachines})`);
+	}
+
+	const formattedVirtualMachines = format(virtualMachines);
+
+	worksheet.addRows(formattedVirtualMachines);
 };
